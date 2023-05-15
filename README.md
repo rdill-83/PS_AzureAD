@@ -1,2 +1,2 @@
-# PS_AzureAD
+### PS_AzureAD
 AzureAD PS Module Repo
