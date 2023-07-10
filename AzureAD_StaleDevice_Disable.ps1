@@ -1,3 +1,7 @@
 # Disable AzureAD Devices - 60+ Days Inactive:
 
-Get-AzureADDevice -All $True | Where {$_.ApproximateLastLogonTimeStamp -le (Get-Date).AddDays(-60)} | Select -Property DisplayName,AccountEnabled,DeviceID,DeviceOSType,DeviceOSVersion,DeviceTrustType,ApproximateLastLogonTimeStamp | Set-AzureADDevice -AccountEnabled $False
+# View AzureAD Devices - 60+ Days Inactive:
+Get-AzureADDevice -All $True | Where {$_.ApproximateLastLogonTimeStamp -le (Get-Date).AddDays(-60)} | Select -Property DisplayName,AccountEnabled,DeviceID,DeviceOSType,DeviceOSVersion,DeviceTrustType,ApproximateLastLogonTimeStamp 
+
+# Disable AzureAD Devices - 60+ Days Inactive:
+Get-AzureADDevice -All $True | Where {$_.ApproximateLastLogonTimeStamp -le (Get-Date).AddDays(-60)} | Set-AzureADDevice -AccountEnabled $False
