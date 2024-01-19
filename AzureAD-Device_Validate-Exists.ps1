@@ -1,5 +1,6 @@
-# AAD-Device_Validate_Exists
+# AAD-Device_Validate-Exists
 
+# Import CSV
 # $CSComps = Import-CSV -Path C:\_IT-Temp\CS_Hosts.csv
 
 $Result=@()
@@ -18,7 +19,7 @@ $Result += New-Object PSObject -Property @{
 }
 $Result | Sort Computer_Name | Select Computer_Name,Computer_Exists
 		
-# Show only Comps that don't Exists
+# Show only Comps that don't Exist
 # $Result | Where {$_.Computer_Exists -eq $False} | Sort Computer_Name | Select Computer_Name,Computer_Exists 
 		
 		
